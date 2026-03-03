@@ -80,7 +80,7 @@
   // ------------------------------
   // Autotest JSON
   // ------------------------------
-  const autotest = '{"NFPA992012NOGND","2sec,Rpt,PwrEnd,A","NP:CL:NC,100","NP:CL:OG,500"}';
+  const autotest = '{"Short","2sec,NoRpt,PwrEnd,A","NP:CL:NC,100"}';
 
   // ------------------------------
   // Build final Pronk URL for Mobilize
@@ -88,7 +88,8 @@
   function buildPronkUrl() {
     return `pronk://devtype?asset=${encodeURIComponent(ASSET_NUMBER)}` +
            `&workOrder=${encodeURIComponent(WORKORDER_NUMBER)}` +
-           `&output=json` +
+           `&output=json` + 
+           `&callback=https%3A%2F%2Fbobwhitten%3Agithub%3Abob-launch%3Aresults`
            `&autotest=${encodeURIComponent(autotest)}`;
   }
 
